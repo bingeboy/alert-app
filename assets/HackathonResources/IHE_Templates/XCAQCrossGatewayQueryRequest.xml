@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<query:AdhocQueryRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0 XCAQ.xsd"
+ xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+ xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+ xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0">
+    <query:ResponseOption returnComposedObjects="true" returnType="LeafClass"/>
+    <AdhocQuery id="urn:uuid:a7ae438b-4bc2-4642-93e9-be891f7bb155" xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+        <rim:Slot name="$XDSDocumentEntryPatientId">
+            <rim:ValueList>
+                <rim:Value>'@EMPI^^^&amp;2.16.840.1.113883.3.2591.400.4.1&amp;ISO'</rim:Value>
+            </rim:ValueList>
+        </rim:Slot>
+        <rim:Slot name="$XDSDocumentEntryStatus">
+            <rim:ValueList>
+                <rim:Value>('urn:oasis:names:tc:ebxml-regrep:StatusType:Approved')</rim:Value>
+            </rim:ValueList>
+        </rim:Slot>
+        <rim:Slot name="$XDSDocumentEntryType">
+            <rim:ValueList>
+                <rim:Value>('urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1')</rim:Value>
+                <rim:Value>('urn:uuid:34268e47-fdf5-41a6-ba33-82133c465248')</rim:Value>
+            </rim:ValueList>
+        </rim:Slot>
+    </AdhocQuery>
+</query:AdhocQueryRequest>

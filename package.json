@@ -1,0 +1,19 @@
+{
+  "name": "HackAthon",
+  "description": "North Festival Hackathon 2013 WBURG BK",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js",
+    "debug": "nodemon --debug app.js"
+  },
+  "dependencies": {
+    "twilio": "*",
+    "express": "3.x",
+    "jade": "*",
+    "less-middleware": "*",
+    "nodemon": "*",
+    "request": "~2.21.0",
+    "xml2js": "~0.2.8"
+  }
+}

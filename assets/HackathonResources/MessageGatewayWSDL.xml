@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="MessageGateway" 
+                  targetNamespace="http://tempuri.org/" 
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+                  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+                  xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" 
+                  xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+                  xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" 
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+                  xmlns:tns="http://tempuri.org/" 
+                  xmlns:wsa10="http://www.w3.org/2005/08/addressing" 
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" 
+                  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+ 
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ExecuteXCPD">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="XCPDRequest" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="FacilityOID" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="IDPToken" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteXCPDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ExecuteXCPDResult" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteXCAQuery">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="XCAQueryRequest" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="FacilityOID" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="IDPToken" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteXCAQueryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ExecuteXCAQueryResult" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteXCARetrieve">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="XCARetrieveRequest" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="FacilityOID" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="IDPToken" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteXCARetrieveResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ExecuteXCARetrieveResult" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteProprietaryDocRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="PatientMRN" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="MRNFacilityOID" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="FacilityOID" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="IDPToken" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExecuteProprietaryDocRequestResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ExecuteProprietaryDocRequestResult" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+  </wsdl:types>
+ 
+  <wsdl:message name="IMessageGateway_ExecuteXCPD_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteXCPD"/>
+  </wsdl:message>
+  <wsdl:message name="IMessageGateway_ExecuteXCPD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteXCPDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IMessageGateway_ExecuteXCAQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteXCAQuery"/>
+  </wsdl:message>
+  <wsdl:message name="IMessageGateway_ExecuteXCAQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteXCAQueryResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IMessageGateway_ExecuteXCARetrieve_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteXCARetrieve"/>
+  </wsdl:message>
+  <wsdl:message name="IMessageGateway_ExecuteXCARetrieve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteXCARetrieveResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IMessageGateway_ExecuteProprietaryDocRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteProprietaryDocRequest"/>
+  </wsdl:message>
+  <wsdl:message name="IMessageGateway_ExecuteProprietaryDocRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteProprietaryDocRequestResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IMessageGateway">
+    <wsdl:operation name="ExecuteXCPD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessageGateway/ExecuteXCPD" message="tns:IMessageGateway_ExecuteXCPD_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessageGateway/ExecuteXCPDResponse" message="tns:IMessageGateway_ExecuteXCPD_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteXCAQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessageGateway/ExecuteXCAQuery" message="tns:IMessageGateway_ExecuteXCAQuery_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessageGateway/ExecuteXCAQueryResponse" message="tns:IMessageGateway_ExecuteXCAQuery_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteXCARetrieve">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessageGateway/ExecuteXCARetrieve" message="tns:IMessageGateway_ExecuteXCARetrieve_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessageGateway/ExecuteXCARetrieveResponse" message="tns:IMessageGateway_ExecuteXCARetrieve_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteProprietaryDocRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessageGateway/ExecuteProprietaryDocRequest" message="tns:IMessageGateway_ExecuteProprietaryDocRequest_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessageGateway/ExecuteProprietaryDocRequestResponse" message="tns:IMessageGateway_ExecuteProprietaryDocRequest_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMessageGateway" type="tns:IMessageGateway">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ExecuteXCPD">
+      <soap:operation soapAction="http://tempuri.org/IMessageGateway/ExecuteXCPD" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteXCAQuery">
+      <soap:operation soapAction="http://tempuri.org/IMessageGateway/ExecuteXCAQuery" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteXCARetrieve">
+      <soap:operation soapAction="http://tempuri.org/IMessageGateway/ExecuteXCARetrieve" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteProprietaryDocRequest">
+      <soap:operation soapAction="http://tempuri.org/IMessageGateway/ExecuteProprietaryDocRequest" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NYeCAPI">
+    <wsdl:port name="BasicHttpBinding_IMessageGateway" binding="tns:BasicHttpBinding_IMessageGateway">
+      <soap:address location="http://localhost:8908/MessageGateway.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
