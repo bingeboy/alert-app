@@ -1,7 +1,5 @@
-sweetSpot
+Alert App
 =========
-
-Hackathon App
 
 <p>Text/call this number to receive my health data</p>
 <p>Number with pin = physician access (NPI number)</p>
