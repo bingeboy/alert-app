@@ -3,18 +3,14 @@ var myphone = 'NUMBER_HERE'
 ,twilioNumber = 'TWILIO_NUMBER';
 
 var express    = require('express')
-var client     = require('twilio')() //sid and token stored on hardware
-    , twilio   = require('twilio')
+    , client   = require('twilio')() //sid and token stored on hardware
     , fs       = require('fs')
     , http     = require('http')
     , util     = require('util')
     , path     = require('path')
     , routes   = require('./routes/routes')
-    , xml      = require("node-xml")
-    , needle   = require('needle');
+    , request  = require('request');
 
-
-var request = require('request');
 var app = express();
 
 
